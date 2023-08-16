@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Creditcard Lead Prediction </title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/static/css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">Home</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <!-- <li class="nav-item"><a class="nav-link" href="#about">About</a></li> -->
+                        <!-- <li class="nav-item"><a class="nav-link" href="#projects">Predict</a></li> -->
+                        <!-- <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <h1 class="mx-auto my-0 text-uppercase;">Credit card Prediction</h1>
+                        <h2 class="text-white-50 mx-auto mt-2 mb-5"></h2>
+                        <a class="btn" style="color: black;background-color: white;" href="#about">START</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- About-->
+        <div style="width: 603px; margin-left: 30%; color: rgb(14, 3, 14); font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" id="about">
+            <form action="/predict" method="post" id="input head">
+            <center>
+            <h1 style="padding-top: 10px; padding-bottom: 25px; color: black;">Credit Card Lead Prediction</h1>
+            
+        <label style="font-size:20px;">Gender:</label>
+        <input type="radio" name="gender" id="Male" value="0" required/ >
+        <label for="Male" class="radio-label"> Male</label>
+        <input type="radio" name="gender"  id="Female" value="1" required/> 
+        <label for="Female" class="radio-label"> Female</label>
+        <br><br>
+
+        <label for="age" style="font-size:20px;">Age:</label> 
+        <input type="number" name="age" id="age" style="width: 150px; height: 25px" placeholder="Values from 23-85" max="85" min="23" required/>
+        
+        <br><br>
+
+              <!-- Select option for Region_Code -->
+        <!-- <label for="region_code">Region Code:</label> -->
+        <label style="font-size:20px;">Region Code:</label>
+        <select id="region_code" name="region_code">
+            <option value="268">RG268</option>
+            <option value="277">RG277</option>
+            <option value="270">RG270</option>
+            <option value="282">RG282</option>
+            <option value="261">RG261</option>
+            <option value="265">RG265</option>
+            <option value="283">RG283</option>
+            <option value="254">RG254</option>
+            <option value="269">RG269</option>
+            <option value="257">RG257</option>
+            <option value="279">RG279</option>
+            <option value="280">RG280</option>
+            <option value="252">RG252</option>
+            <option value="284">RG284</option>
+            <option value="259">RG259</option>
+            <option value="281">RG281</option>
+            <option value="258">RG258</option>
+            <option value="266">RG266</option>
+            <option value="260">RG260</option>
+            <option value="274">RG274</option>
+            <option value="256">RG256</option>
+            <option value="275">RG275</option>
+            <option value="273">RG273</option>
+            <option value="267">RG267</option>
+            <option value="272">RG272</option>
+            <option value="251">RG251</option>
+            <option value="262">RG262</option>
+            <option value="264">RG264</option>
+            <option value="278">RG278</option>
+            <option value="276">RG276</option>
+            <option value="263">RG263</option>
+            <option value="250">RG250</option>
+            <option value="255">RG255</option>
+            <option value="253">RG253</option>
+            <option value="271">RG271</option>
+            <!-- Add more options as needed -->
+        </select><br><br>
+
+           <!-- Select option for Occupation -->
+       <!-- <label for="occupation">Occupation:</label> -->
+       <label style="font-size:20px;">Occupation:</label>
+       <select id="occupation" name="occupation">
+           <option value="Salaried">Salaried</option>
+           <option value="Self_Employed">Self Employed</option>
+           <option value="Entrepreneur">Entrepreneur</option>
+           <option value="Other">Other</option>
+           </select>
+       <br><br>
+
+             <!-- Select option for Channel_Code -->
+        <!-- <label for="channel_code">Channel Code:</label> -->
+        <label style="font-size:20px;">Channel Code:</label>
+        <select id="channel_code" name="channel_code">
+            <option value="X1">X1</option>
+            <option value="X2">X2</option>
+            <option value="X3">X3</option>
+            <option value="X4">X4</option>
+            <!-- Add more options as needed -->
+        </select>
+        <br><br>
+
+       <label style="font-size:20px;">Vintage:</label>
+        <input type="number" name="vintage" id="vintage" style="width: 150px; height: 25px" placeholder="Values from 7-135" max="135" min="7" required/>
+        <br><br>
+
+
+        <!-- Radio buttons for Credit Product -->
+        <label style="font-size:20px;">Credit Product:</label>
+        <input type="radio" name="credit_product" id="Yes" value="1" required/> 
+        <label for="Yes" class="radio-label"> Yes</label>
+        <input type="radio" name="credit_product" id="No" value="0" required/> 
+        <label for="No" class="radio-label"> No</label>
+        <br><br>
+
+        
+        <label for="avg_account_balance" style="font-size:20px;">Average Account Balance:</label>
+        <input type="number" name="avg_account_balance" id="avg_account_balance" style="width: 200px; height: 25px" placeholder="Values from 20790-10352009" max="10352009" min="20790" required/>
+        <br><br>
+
+        <!-- Radio buttons for Is Active -->
+        <label style="font-size:20px;">Is Active:</label>
+        <input type="radio" name="is_active" id="Yes" value="1" required/>
+        <label for="Yes" class="radio-label"> Yes</label>
+        <input type="radio" name="is_active" id="No" value="0" required/> 
+        <label for="No" class="radio-label"> No</label>
+        <br>
+        <br>
+       
+       <!-- <input type="submit" value="Predict">-->
+          <!-- <a href="result.html">-->
+            <button type="submit" class="btn btn-primary" style="background-color: black; margin-bottom: 1%;">PREDICT</button>
+      
+        
+            </center>
+            </form>
+        
+         
+        
+          </div>
+     
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html> -->
